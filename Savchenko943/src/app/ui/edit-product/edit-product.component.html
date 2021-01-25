@@ -1,0 +1,65 @@
+<form [formGroup]="myForm2">
+  <div class="d-none " [id]="id">
+     <div class="form-group">
+        <input type="text" 
+          class="form-control" 
+          id="exampleFormControlInput1" 
+          placeholder="Наименование" 
+          formControlName="name"   
+          [(ngModel)]="name"/>
+      </div>
+      <div class="form-group">
+        <input type="number" 
+          class="form-control" 
+          id="exampleFormControlInput1" 
+          placeholder="Количество" 
+          formControlName="quantity"   
+          [(ngModel)]="quantity"/>
+      </div>
+       <div class="form-group">
+          <select class="form-control" id="exampleFormControlSelect1" formControlName="status" >
+            <option [ngValue]="true">Куплено</option>
+            <option [ngValue]="false">Не куплено</option>
+         </select>
+          <input type="hidden" [(ngModel)]="id" [ngModelOptions]="{standalone: true}" />
+       </div>
+       <button class="btn btn-primary btn-sm" style="margin-right: 2rem;" [disabled]="myForm2.controls['name'].invalid || myForm2.controls['quantity'].invalid" (click)="onEditProduct()">Редактировать</button>
+       <button class="btn btn-outline-danger btn-sm" (click)="onDeleteProduct(id)">Удалить</button>
+  </div>
+  <div class="alert alert-danger" *ngIf="myForm2.controls['name'].invalid && myForm2.controls['name'].touched">Не указано наименование товара!</div> 
+  <div class="alert alert-danger" *ngIf="myForm2.controls['quantity'].invalid && myForm2.controls['quantity'].touched">Не указано количество товара!</div> 
+  <div class="alert alert-danger" *ngIf="myForm2.controls['status'].invalid && myForm2.controls['status'].touched">Не указан статус товара!</div> 
+  
+</form>
+
+
+
+
+
+
+
+
+<!-- <form [formGroup]="myForm2">
+    <div class="d-none " [id]="id">
+        <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Имя" 
+        formControlName="name"   
+        [(ngModel)]="name"/>
+        <input 
+        type="number" 
+        class="form-control" 
+        placeholder="Количество" 
+        formControlName="quantity" 
+        [(ngModel)]="quantity" />
+
+          <input type="hidden" [(ngModel)]="id" [ngModelOptions]="{standalone: true}" />
+          <button [disabled]="myForm2.controls['name'].invalid || myForm2.controls['quantity'].invalid" (click)="onEditProduct()">Редактировать</button>
+          <button class="btn btn-outline-danger btn-sm" (click)="onDeleteProduct(id)">
+            Удалить
+          </button>
+        </div>
+        <div class="alert alert-danger" *ngIf="myForm2.controls['name'].invalid && myForm2.controls['name'].touched">Не указано наименование товара!</div> 
+        <div class="alert alert-danger" *ngIf="myForm2.controls['quantity'].invalid && myForm2.controls['quantity'].touched">Не указано количество товара!</div> 
+  </form> -->

@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Молоко \"Буренка\"",
+      "quantity": 45,
+      "type": 0,
+      "status": false
+    },
+    {
+      "id": 2,
+      "name": "Картошка",
+      "quantity": 30,
+      "type": 0,
+      "status": true
+    },
+    {
+      "id": 3,
+      "name": "Апельсины",
+      "quantity": 5,
+      "type": 0,
+      "status": true
+    },
+    {
+      "id": 4,
+      "name": "Мандарины",
+      "quantity": 5,
+      "type": 0,
+      "status": true
+    },
+    {
+      "name": "Рыба",
+      "quantity": 2,
+      "type": 0,
+      "status": false,
+      "id": 5
+    },
+    {
+      "id": 6,
+      "name": "Детальки лего",
+      "quantity": 120,
+      "type": 0,
+      "status": true
+    },
+    {
+      "name": "Морковка",
+      "quantity": 12,
+      "type": 0,
+      "status": false,
+      "id": 7
+    },
+    {
+      "name": "Лук",
+      "quantity": 12,
+      "type": 0,
+      "status": false,
+      "id": 8
+    }
+  ]
+}

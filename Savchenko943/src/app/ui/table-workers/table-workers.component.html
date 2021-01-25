@@ -1,0 +1,41 @@
+<ng-container *ngIf="products.length > 0">
+  <select  class="form-control" id="exampleFormControlSelect2" [(ngModel)]="sortM"> 
+    <option value="alphavit">По алфавиту </option>
+  </select>
+    <div class="container">
+      <div class="center">
+        <div class="card" style="margin-top: 2rem;" [ngClass]="{'bg-success': product.status == false}" *ngFor="let product of products | mypypi : sortM">
+          <h5 class="card-header"># {{product.id}}</h5>
+          <div class="card-body">
+            <h3 class="card-title">Наименование продукта: <b>{{product.name}}</b></h3>
+            <p class="card-text">Количество продукта: <b>{{product.quantity}}</b></p>
+            <button style="margin-right: 2rem;"
+              class="btn btn btn-primary btn-sm"
+              (click)="showForm(product.id)"
+            >
+              Редактировать
+            </button>
+            <button 
+              class="btn btn-primary btn-sm" style="margin-right: 2rem;"
+              (click) ="onDeleteProduct(product.id)"
+            >
+              Удалить
+            </button>
+            <button 
+              class="btn btn-primary btn-sm" style="margin-right: 2rem;"
+              (click)="change_status(product.id)"
+            >
+              Куплено/не куплено
+            </button>
+          </div>
+          <app-edit-product (deleteProductedit)="onDeleteProduct($event)" (editProduct)="onEditProduct($event)" [id]="product.id" [name]="product.name" [quantity]="product.quantity" [status]="product.status"></app-edit-product>
+        </div> 
+      </div>
+    </div>
+</ng-container>
+
+  
+  
+  
+  
+  

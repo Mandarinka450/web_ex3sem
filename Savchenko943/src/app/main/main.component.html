@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row mb-3">
+      <div class="col-12">
+        <h1>{{ title }}</h1>
+      </div>
+    </div>
+    <app-add-product (addProduct)="onAddProduct($event)"></app-add-product>
+  <app-table-workers 
+    [title]="'Продукты'"
+    [products]="getByType(myProductType.prod)"
+    (deleteProduct)="onDeleteProduct($event)"
+    (editProduct)="onEditProduct($event)">
+  </app-table-workers>
+</div>
